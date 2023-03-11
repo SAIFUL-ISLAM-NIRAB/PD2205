@@ -1,0 +1,97 @@
+{% extends 'Home.html' %}
+
+{% block title %} Profile {% endblock %}
+
+{% block search %} {% endblock %}
+
+{% block body %}
+
+
+<section style="background-color: #eee;">
+    <div class="container py-5" style="background-color:#212F3C">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center" style="background-color:#A9CCE3">
+                        <img src="{{prof.image.url}}"
+                             alt="avatar"
+                             class="rounded-circle img-fluid" style="width: 150px;">
+                        <h5 class="my-3">{{prof.Name}}</h5>
+                        <p class="text-muted mb-1">Full Stack Developer</p>
+                        <p class="text-muted mb-4">{{prof.address}}</p>
+                        <div class="d-flex justify-content-center mb-2">
+                            <a href="{% url 'updateProfile' prof.id  %}"><button type="button" class="btn btn-primary">Update</button></a>
+                            <a href="{% url 'DeleteProfile' prof.id  %}"><button type="button" class="btn btn-outline-primary ms-1">Delete</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8" style="margin-top : 9px;">
+                <div class="card mb-4"style="background-color: #BFC9CA">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Full Name</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{prof.Name}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Email</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{prof.email}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Phone</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{prof.phone}}</p>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Address</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{prof.address}}</p>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Age</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{prof.age}}</p>
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Gender</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{prof.gender}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
